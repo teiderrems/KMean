@@ -1,12 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using K_Mean;
-int n=10,m=10,k=2;
+int n=100,m=100,k=2;
+int iter_max = 500;
 
 
 List<List<Pixel>> image=GetPixels(n,m);
 
 KMean km=new();
-km.Fit(image,k);
+km.Fit(image,k,iter_max);
 
 
 Pixel[][] reschape=Reschape(km.Pixels,n,m);
